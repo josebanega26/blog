@@ -1,10 +1,30 @@
 import { createGlobalStyle } from 'styled-components';
 
+const theme = {
+  spacing: {
+    xs: "0.125rem",
+    sm: "0.25rem",
+    md: "0.5rem",
+    lg: "0.75rem",
+    xl: "1rem",
+  },
+  font: {
+    heading: {
+      sm: "1.4rem",
+    },
+    text: {
+      sm: "0.75rem",
+    },
+  },
+};
+
 export const lightTheme = {
   body: '#FFF',
   text: '#363537',
+  lightText: '#FAFAFA',
   toggleBorder: '#FFF',
   background: '#363537',
+  ...theme,
 };
 
 export const darkTheme = {
@@ -12,13 +32,14 @@ export const darkTheme = {
   text: '#FAFAFA',
   toggleBorder: '#6B8096',
   background: '#999',
+  ...theme,
 };
 
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, Roboto, sans-serif;
     padding: 0;
     margin: 0;
     transition: all 0.50s linear;
