@@ -7,14 +7,12 @@ const theme = {
     md: "0.5rem",
     lg: "0.75rem",
     xl: "1rem",
+    xxl: '2rem',
+    xxxl: "2.5rem"
   },
   font: {
-    heading: {
-      sm: "1.4rem",
-    },
-    text: {
-      sm: "0.75rem",
-    },
+    heading: 'Newsreader',
+    text: 'Roboto'
   },
 };
 
@@ -22,7 +20,8 @@ export const lightTheme = {
   body: '#FFF',
   text: '#363537',
   lightText: '#FAFAFA',
-  toggleBorder: '#FFF',
+  description: '#666666',
+  toggleBorder: '#FFF', 
   background: '#363537',
   ...theme,
 };

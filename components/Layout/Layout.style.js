@@ -19,7 +19,7 @@ export const LeftNav = styled.div`
     padding-inline-start: 0;
     list-style-type: none;
     li {
-      padding: ${({ theme }) => `0 ${theme.spacing.sm || "4px"}`};
+      padding: ${({ theme }) => `0 ${theme.spacing.xxl || "4px"}`};
       letter-spacing: 0.05rem;
       &.active > a {
         border-bottom: 2px solid ${({ theme }) => theme.background};
@@ -42,7 +42,7 @@ export const Main = styled.main`
 
 export const Container = styled.div`
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: grid;
   grid-template-rows: 60px 1fr 100px;
 `;
