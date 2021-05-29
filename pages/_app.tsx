@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "styles/themeConfig";
 import Layout from "@/components/Layout";
+import { AppProvider } from "context";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [theme, setTheme] = useState("light");
@@ -15,7 +16,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <Layout toggleTheme={toggleTheme}>
-        <Component {...pageProps} />
+        <AppProvider>
+          <Component {...pageProps} />
+        </AppProvider>
       </Layout>
     </ThemeProvider>
   );
