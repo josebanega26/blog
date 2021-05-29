@@ -23,6 +23,11 @@ export const lightTheme = {
   description: '#666666',
   toggleBorder: '#FFF', 
   background: '#363537',
+  btn: {
+    dark: '#000',
+    darkHover: '#222',
+    text: '#fff'
+  },
   ...theme,
 };
 
