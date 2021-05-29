@@ -4,6 +4,7 @@ export const Button = styled.button`
   width: 100%;
   border: 0;
   padding: 8px;
+  cursor: pointer;
   color: ${({ theme }) => theme.btn.text};
   background: ${({ theme }) => theme.btn.dark};
   &:hover {
@@ -33,4 +34,11 @@ export const Label = styled.label`
   margin-bottom: 0.5rem;
   color: #222;
   letter-spacing: 0.025em;
+`;
+
+export const ButtonList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 8px;
+  padding: 4px 0;
 `;

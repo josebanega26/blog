@@ -4,7 +4,6 @@ export const validateImgExtension = (
 ) => {
   const fileExtension = file.name.split(".").pop()?.toLowerCase() as string;
   const isValidFile = !!allowedExtension.includes(fileExtension);
-  console.log(`isValidFile`, isValidFile);
   if (!isValidFile) {
     alert("Allowed Extensions are : *." + allowedExtension.join(", *."));
   }

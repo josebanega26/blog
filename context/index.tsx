@@ -7,7 +7,7 @@ interface InitialStateType {
   localPosts: LocalNew[];
 }
 
-const AppContext = createContext<{
+export const AppContext = createContext<{
   state: InitialStateType;
   dispatch: Dispatch<AppActions>;
 }>({ state: initialState, dispatch: () => null });

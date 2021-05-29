@@ -13,6 +13,9 @@ export const CardContainer = styled.a`
 
 export const InfoContainer = styled.div`
   grid-area: Info;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   h3 {
     margin: 0;
     font-family: ${({ theme: { font } }) => font.heading};

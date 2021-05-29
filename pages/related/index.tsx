@@ -1,7 +1,12 @@
-import React from "react";
+import { useContext } from "react";
+import { AppContext } from "../../context/index";
+import CardList from '@/components/CardList/index';
 
 const Related = () => {
-  return <div>Related</div>;
+  const {
+    state: { localPosts },
+  } = useContext(AppContext);
+  return <div><CardList list={localPosts} isLocal></CardList></div>;
 };
 
-export default Related;
+export default  Related;

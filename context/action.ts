@@ -11,7 +11,7 @@ export const updatePost = (payload: LocalNew): UpdatePost => ({
   payload,
 });
 
-export const deletePost = (payload: LocalNew): DeletePost => ({
+export const deletePost = (payload: string): DeletePost => ({
   type: appTypes.DELETE,
   payload,
 });

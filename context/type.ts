@@ -12,7 +12,7 @@ export interface CreatePost {
 }
 
 export interface DeletePost {
-  payload: LocalNew;
+  payload: string;
   type: typeof appTypes.DELETE;
 }
 export interface UpdatePost {
