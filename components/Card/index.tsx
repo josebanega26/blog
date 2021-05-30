@@ -1,27 +1,17 @@
 import { useContext } from "react";
 import { RemoteNew, LocalNew } from "types";
 import dayjs from "dayjs";
-import {
-  CardContainer,
-  ImageContainer,
-  InfoContainer,
-} from "./Card.style";
+import { CardContainer, ImageContainer, InfoContainer } from "./Card.style";
 import { Button, ButtonList } from "@/components/index";
 import { AppContext } from "context";
-import { deletePost } from "context/action";
+import { deletePost, selectPost } from "context/action";
 import { useRouter } from "next/router";
 
 interface CardProps extends RemoteNew, LocalNew {
   isLocal: boolean;
 }
-const Card = ({
-  title,
-  image,
-  description,
-  publishedAt,
-  isLocal,
-  id,
-}: CardProps) => {
+const Card = ({ isLocal, ...card }: CardProps) => {
+  const { title, image, description, publishedAt, id , author } = card;
   const router = useRouter();
   const { dispatch } = useContext(AppContext);
 
@@ -30,6 +20,7 @@ const Card = ({
   };
 
   const goToEdit = () => {
+    dispatch(selectPost({...card}))
     router.push({
       pathname: "/related/add",
       query: { edit: id },
@@ -44,6 +35,7 @@ const Card = ({
           <h3>{title}</h3>
           <p>{description}</p>
           <div>
+            { author && <span>By {author} - </span>}
             <span>{date}</span>
           </div>
         </div>

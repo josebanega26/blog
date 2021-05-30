@@ -1,3 +1,5 @@
+import { LocalNew } from '../types';
+
 export const validateImgExtension = (
   file: File,
   allowedExtension = ["jpeg", "jpg", "png"]
@@ -9,3 +11,8 @@ export const validateImgExtension = (
   }
   return isValidFile;
 };
+
+export const updateLocalPostList = (postList : LocalNew[], updatedPost : LocalNew) => {
+  const newPostList = postList.filter(({id})=> id !== updatedPost.id)
+  return [updatedPost,...newPostList]
+}

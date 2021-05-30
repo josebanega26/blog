@@ -12,7 +12,7 @@ export const Header = styled.header`
   }
 `;
 
-export const LeftNav = styled.div`
+export const Nav = styled.div`
   display: flex;
   ul {
     display: flex;

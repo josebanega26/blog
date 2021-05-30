@@ -20,3 +20,9 @@ export const RightPanelContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const ErrorMessage = styled.small`
+  color: #bb0000;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+`

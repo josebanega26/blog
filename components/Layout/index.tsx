@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "@/components/Logo";
-import { Container, Header, Footer, Main, LeftNav } from "./Layout.style";
+import { Container, Header, Footer, Main, Nav } from "./Layout.style";
 import Link from "next/link";
 import { links } from "./Layout.data";
 import { useRouter } from "next/router";
@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
     <Container>
       <Header>
         <nav>
-          <LeftNav>
+          <Nav>
             <Logo></Logo>
             <ul>
               {links.map(({ path, name }) => {
@@ -34,7 +34,16 @@ const Layout = ({ children }: LayoutProps) => {
                 );
               })}
             </ul>
-          </LeftNav>
+          </Nav>
+          <Nav>
+            <ul>
+              <li>
+                <Link href='/related/add'>
+                  <a>Add Post</a>
+                </Link>
+              </li>
+            </ul>
+          </Nav>
         </nav>
       </Header>
       <Main>{children}</Main>

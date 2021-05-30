@@ -1,9 +1,12 @@
-import { LocalNew } from "../types";
+import { LocalNew } from '../types';
 
 export const appTypes = {
-  CREATE: "[post] create",
-  UPDATE: "[post] update",
-  DELETE: "[post] delete",
+  CREATE: "[posts] create",
+  UPDATE: "[posts] update",
+  DELETE: "[posts] delete",
+  SELECT: "[selected-post] select",
+  CLEAN_SELECT: "[selected-post] clean"
+
 } as const;
 
 export interface CreatePost {
@@ -19,5 +22,13 @@ export interface UpdatePost {
   payload: LocalNew;
   type: typeof appTypes.UPDATE;
 }
+export interface SelectPost {
+  payload: LocalNew;
+  type: typeof appTypes.SELECT;
+}
 
-export type AppActions = CreatePost | DeletePost | UpdatePost;
+export interface CleanSelectPost {
+  type: typeof appTypes.CLEAN_SELECT;
+}
+
+export type AppActions = CreatePost | DeletePost | UpdatePost | SelectPost | CleanSelectPost;
