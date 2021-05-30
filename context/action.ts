@@ -6,7 +6,8 @@ import {
   SelectPost,
 } from "./type";
 import { LocalNew } from "../types";
-import { CleanSelectPost } from "./type";
+import { CleanSelectPost, SetState } from './type';
+import { InitialState } from './reducer';
 
 export const createPost = (payload: LocalNew): CreatePost => ({
   type: appTypes.CREATE,
@@ -30,4 +31,9 @@ export const selectPost = (payload: LocalNew): SelectPost => ({
 
 export const cleanSelectPost = (): CleanSelectPost => ({
   type: appTypes.CLEAN_SELECT,
+});
+
+export const setState = (payload: InitialState): SetState => ({
+  type: appTypes.SET_STATE,
+  payload
 });

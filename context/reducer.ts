@@ -7,15 +7,7 @@ export interface InitialState {
   selectedPost: LocalNew | undefined;
 }
 
-const getInitStateFromStorage = (): InitialState | undefined => {
-  // Need this verification to avoid error from SSR rendering from next
-  // if (typeof window !== "undefined") {
-  // const stateFromStorage = localStorage.getItem("state") || "";
-  // return JSON.parse(stateFromStorage) || undefined;
-  // }
-  return undefined
-};
-export const initialState: InitialState = getInitStateFromStorage() || {
+export const initialState: InitialState = {
   localPosts: [],
   selectedPost: undefined,
 };
@@ -23,7 +15,6 @@ export const initialState: InitialState = getInitStateFromStorage() || {
 type PostState = typeof initialState;
 
 export const postReducer = (state: PostState, action: AppActions) => {
-  console.log("here in reducer");
   switch (action.type) {
     case appTypes.CREATE:
       return {
@@ -41,7 +32,6 @@ export const postReducer = (state: PostState, action: AppActions) => {
         localPosts: updateLocalPostList(state.localPosts, action.payload),
       };
     case appTypes.DELETE:
-      console.log("here deleted");
       return {
         ...state,
         localPosts: [
@@ -52,6 +42,10 @@ export const postReducer = (state: PostState, action: AppActions) => {
       return {
         ...state,
         selectedPost: undefined,
+      };
+      case appTypes.SET_STATE:
+      return {
+        ...action.payload
       };
     default:
       return state;
