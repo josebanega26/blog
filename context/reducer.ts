@@ -9,10 +9,10 @@ export interface InitialState {
 
 const getInitStateFromStorage = (): InitialState | undefined => {
   // Need this verification to avoid error from SSR rendering from next
-  if (typeof window !== "undefined") {
-  const stateFromStorage = localStorage.getItem("state") || "";
-  return JSON.parse(stateFromStorage) || undefined;
-  }
+  // if (typeof window !== "undefined") {
+  // const stateFromStorage = localStorage.getItem("state") || "";
+  // return JSON.parse(stateFromStorage) || undefined;
+  // }
   return undefined
 };
 export const initialState: InitialState = getInitStateFromStorage() || {

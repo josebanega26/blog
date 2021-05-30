@@ -13,7 +13,7 @@ const CardList = ({ list, isLocal = false }: CardListProps) => {
   return (
     <ListContainer>
       {list.map((props: RemoteNew | LocalNew, key: React.Key) => {
-        return <Card key={key} {...props} isLocal={isLocal}></Card>;
+        return <Card key={key} card={props} isLocal={isLocal}></Card>;
       })}
     </ListContainer>
   );

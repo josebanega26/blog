@@ -1,16 +1,11 @@
-import { useEffect, useState } from "react";
 import CardList from "@/components/CardList/index";
 import { getPosts } from "utils/API";
-import { RemoteNew } from '../../types';
+import { RemoteNew } from "../../types";
 
-const Latest = () => {
-  const [posts, setPosts] = useState<RemoteNew[]>([]);
-  useEffect(() => {
-    getPosts().then((response: RemoteNew[]) => {
-      setPosts(response);
-    });
-  }, []);
-
+interface LatestProps {
+  posts: RemoteNew[];
+}
+const Latest = ({ posts = [] }: LatestProps) => {
   return (
     <div>
       <CardList list={posts}></CardList>
@@ -19,3 +14,8 @@ const Latest = () => {
 };
 
 export default Latest;
+
+Latest.getInitialProps = async () => {
+  const res = await getPosts();
+  return { posts: res };
+};

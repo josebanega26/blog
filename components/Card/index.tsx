@@ -7,11 +7,13 @@ import { AppContext } from "context";
 import { deletePost, selectPost } from "context/action";
 import { useRouter } from "next/router";
 
-interface CardProps extends RemoteNew, LocalNew {
+interface CardProps {
+  card: RemoteNew | LocalNew;
   isLocal: boolean;
 }
-const Card = ({ isLocal, ...card }: CardProps) => {
-  const { title, image, description, publishedAt, id , author } = card;
+const Card = ({ isLocal, card }: CardProps) => {
+  const { title, image, description, publishedAt } = card;
+  const { id, author } = card as LocalNew
   const router = useRouter();
   const { dispatch } = useContext(AppContext);
 
@@ -20,7 +22,7 @@ const Card = ({ isLocal, ...card }: CardProps) => {
   };
 
   const goToEdit = () => {
-    dispatch(selectPost({...card}))
+    dispatch(selectPost({ ...card as LocalNew}))
     router.push({
       pathname: "/related/add",
       query: { edit: id },
@@ -35,7 +37,7 @@ const Card = ({ isLocal, ...card }: CardProps) => {
           <h3>{title}</h3>
           <p>{description}</p>
           <div>
-            { author && <span>By {author} - </span>}
+            {author && <span>By {author} - </span>}
             <span>{date}</span>
           </div>
         </div>

@@ -70,19 +70,19 @@ const PostForm = ({ handlerSubmit, edit, initialValues }: PostFormProps) => {
 
   const [imgUrl, setImgUrl] = useState();
 
-  const onChangeImage = (event: ChangeEventHandler<HTMLInputElement>) => {
-    const reader = new FileReader();
-    const file = (event.target as HTMLInputElement)?.files[0];
+  // const onChangeImage = (event: ChangeEventHandler<HTMLInputElement>) => {
+  //   const reader = new FileReader();
+  //   const file = (event.target as HTMLInputElement)?.files[0];
 
-    if (validateImgExtension(file)) {
-      reader.onloadend = () => {
-        const imgUrl = reader!.result;
-        setImgUrl(imgUrl);
-        setValue("image", imgUrl);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  //   if (validateImgExtension(file)) {
+  //     reader.onloadend = () => {
+  //       const imgUrl = reader!.result;
+  //       setImgUrl(imgUrl);
+  //       setValue("image", imgUrl);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
   return (
     <div>
