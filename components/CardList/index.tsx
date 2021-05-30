@@ -5,14 +5,15 @@ import { ListContainer } from "./CardList.style";
 
 interface CardListProps {
   list: RemoteNew[] | LocalNew[];
-  isLocal: boolean;
+  isLocal?: boolean;
 }
 
-const CardList = ({ list, isLocal }: CardListProps) => {
+// I don't recommend use the index as Key but I don't have an ID from remote and the list is never reordered or filtered. So it works
+const CardList = ({ list, isLocal = false }: CardListProps) => {
   return (
     <ListContainer>
-      {list.map(({ title, ...rest }) => {
-        return <Card key={title} {...rest} title={title} isLocal={isLocal}></Card>;
+      {list.map((props: RemoteNew | LocalNew, key: React.Key) => {
+        return <Card key={key} {...props} isLocal={isLocal}></Card>;
       })}
     </ListContainer>
   );
