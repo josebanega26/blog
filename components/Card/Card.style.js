@@ -8,7 +8,13 @@ export const CardContainer = styled.a`
   grid-template-areas:
     "Info Image"
     "Info Image";
-  padding: ${({ theme: { spacing } }) => `${spacing.xl} 96px`}; ;
+  padding: ${({ theme: { spacing } }) => `${spacing.xl} 96px`};
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "Image"
+      "Info";
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -16,6 +22,9 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
+
+export const Info = styled.div`
   h3 {
     margin: 0;
     font-family: ${({ theme: { font } }) => font.heading};
@@ -39,7 +48,6 @@ export const InfoContainer = styled.div`
     color: ${({ theme }) => theme.description};
   }
 `;
-
 export const ImageContainer = styled.div`
   grid-area: Image;
   width: 100%;

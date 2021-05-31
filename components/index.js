@@ -38,7 +38,43 @@ export const Label = styled.label`
 
 export const ButtonList = styled.div`
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   padding: 4px 0;
+`;
+
+export const Title = styled.h2`
+  margin: ${({ theme: { spacing } }) => {
+    spacing.xl;
+  }};
+  font-family: ${({ theme: { font } }) => font.heading};
+  font-size: 48px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  display: flex;
+  margin: 2.5rem 0 4rem;
+  justify-content: center;
+  /* height: 450px; */
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+`;
+
+export const DetailedInfo = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  min-width: 200px;
+  justify-content: center;
+  margin: 0 auto;
+  background: ${({ theme }) => theme.body};
+  padding: 1.25rem;
 `;
