@@ -30,6 +30,7 @@ export const lightTheme = {
   description: '#666666',
   toggleBorder: '#FFF', 
   background: '#363537',
+  label: '#222',
   ...theme,
 };
 
@@ -40,6 +41,7 @@ export const darkTheme = {
   description: '#EFEFEF',
   toggleBorder: '#6B8096',
   background: '#999',
+  label: '#FFF',
   ...theme,
 };
 

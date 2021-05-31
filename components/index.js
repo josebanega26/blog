@@ -34,7 +34,7 @@ export const Label = styled.label`
   font-weight: 600;
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
-  color: #222;
+  color: ${({ theme }) => theme.label};
   letter-spacing: 0.025em;
 `;
 
