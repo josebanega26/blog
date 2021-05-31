@@ -101,7 +101,7 @@ const PostForm = ({ handlerSubmit, edit, initialValues }: PostFormProps) => {
           <Input {...register("author")} />
           <ErrorMessage>{errors.author?.message}</ErrorMessage>
           <ButtonList>
-            <Button type="button" subType='danger' onClick={goBack}>
+            <Button type="button" {...{ subType: "danger" }}  onClick={goBack}>
               Cancel
             </Button>
             <Button type="submit" >{`${!edit ? "Create" : "Edit"} Post`}</Button>
