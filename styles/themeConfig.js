@@ -14,6 +14,13 @@ const theme = {
     heading: 'Newsreader',
     text: 'Roboto'
   },
+  btn: {
+    dark: '#000',
+    darkHover: '#222',
+    danger: '#A6120D',
+    dangerHover: '#D9221C',
+    text: '#fff'
+  },
 };
 
 export const lightTheme = {
@@ -23,28 +30,16 @@ export const lightTheme = {
   description: '#666666',
   toggleBorder: '#FFF', 
   background: '#363537',
-  btn: {
-    dark: '#000',
-    darkHover: '#222',
-    danger: '#A6120D',
-    dangerHover: '#D9221C',
-    text: '#fff'
-  },
   ...theme,
 };
 
 export const darkTheme = {
   body: '#363537',
   text: '#FAFAFA',
-  lightText: '#1A1A1A',
-  description: '#666666',
+  lightText: '#FAFAFA',
+  description: '#EFEFEF',
   toggleBorder: '#6B8096',
   background: '#999',
-  btn: {
-    dark: '#FFF',
-    darkHover: '#DDD',
-    text: '#222'
-  },
   ...theme,
 };
 

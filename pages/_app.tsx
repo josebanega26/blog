@@ -14,7 +14,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Layout toggleTheme={toggleTheme}>
+      <Layout toggleTheme={toggleTheme} theme={theme}>
         <AppProvider>
           <Component {...pageProps} />
         </AppProvider>
