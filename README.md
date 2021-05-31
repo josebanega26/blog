@@ -19,7 +19,9 @@
 ```sh
 yarn 
 ```
+## Prerequisites
 
+Before you run the project yo need to add the env variables, you can find an example in .env.example
 ## Usage
 
 ```sh
@@ -32,6 +34,7 @@ yarn run dev
 
 * Website: https://josebanega.netlify.app/
 * Github: [@josebanega26](https://github.com/josebanega26)
+* Deployed version: https://blog-joseb.netlify.app/
 
 
 
