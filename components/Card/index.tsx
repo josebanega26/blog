@@ -49,7 +49,7 @@ const Card = ({ isLocal, card }: CardProps) => {
         {isLocal && (
           <ButtonList>
             <Button onClick={goToEdit}>Edit</Button>
-            <Button onClick={removePost}> Delete </Button>
+            <Button subType='danger' onClick={removePost}> Delete </Button>
           </ButtonList>
         )}
       </InfoContainer>

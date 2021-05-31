@@ -6,9 +6,11 @@ export const Button = styled.button`
   padding: 8px;
   cursor: pointer;
   color: ${({ theme }) => theme.btn.text};
-  background: ${({ theme }) => theme.btn.dark};
+  background: ${({ subType = "dark", theme }) => {
+    return theme.btn[subType];
+  }};
   &:hover {
-    background: ${({ theme }) => theme.btn.darkHover};
+    background: ${({ subType = "dark", theme }) => theme.btn[`${subType}Hover`]};
   }
 `;
 

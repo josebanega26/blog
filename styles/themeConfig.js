@@ -26,6 +26,8 @@ export const lightTheme = {
   btn: {
     dark: '#000',
     darkHover: '#222',
+    danger: '#A6120D',
+    dangerHover: '#D9221C',
     text: '#fff'
   },
   ...theme,
