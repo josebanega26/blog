@@ -57,7 +57,7 @@ export const Title = styled.h2`
 export const ImageContainer = styled.div`
   position: relative;
   display: flex;
-  margin: 2.5rem 0 4rem;
+  margin: 2.5rem 0 150px;
   justify-content: center;
   /* height: 450px; */
   img {
@@ -70,11 +70,12 @@ export const DetailedInfo = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -75px;
   width: 75%;
   min-width: 200px;
   justify-content: center;
   margin: 0 auto;
   background: ${({ theme }) => theme.body};
   padding: 1.25rem;
+  max-height: 150px;
 `;

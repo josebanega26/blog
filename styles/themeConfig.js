@@ -34,8 +34,15 @@ export const lightTheme = {
 export const darkTheme = {
   body: '#363537',
   text: '#FAFAFA',
+  lightText: '#1A1A1A',
+  description: '#666666',
   toggleBorder: '#6B8096',
   background: '#999',
+  btn: {
+    dark: '#FFF',
+    darkHover: '#DDD',
+    text: '#222'
+  },
   ...theme,
 };
 

@@ -38,14 +38,28 @@ export const Info = styled.div`
     font-family: ${({ theme: { font } }) => font.heading};
     font-size: 1.125rem;
     margin-bottom: 0;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   span {
     font-size: 11px;
     text-transform: uppercase;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   p,
   span {
     color: ${({ theme }) => theme.description};
+  }
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1.25rem;
+    }
+    small {
+      font-size: 0.75rem;
+    }
   }
 `;
 export const ImageContainer = styled.div`

@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const Logo = () => {
@@ -7,7 +6,7 @@ const Logo = () => {
         <div>
             <Link href='/'>
                 <a>
-                    <Image src="/assets/icons/logo.svg" width="48`" height="48" alt="logo"  />
+                    <img src="/assets/icons/logo.svg" width="48`" height="48" alt="logo"  />
                 </a>
             </Link>
         </div>
